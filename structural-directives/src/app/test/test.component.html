@@ -1,0 +1,39 @@
+<div *ngIf="displayName; then thenBlock; else elseBlock"></div>
+  <ng-template #thenBlock>
+    <h2 #thenBlock>
+      Om Prakash Kumar
+    </h2>
+  </ng-template>
+  <ng-template #elseBlock>
+    <h2>
+      Name is hidden
+    </h2>
+  </ng-template>
+
+  <div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">You picked red color</div>
+    <div *ngSwitchCase="'yellow'">You picked yellow color</div>
+    <div *ngSwitchCase="'blue'">You picked blue color</div>
+    <div *ngSwitchDefault>Pick Again</div>
+  </div>
+
+  <div *ngFor="let color of colors; even as o ">
+    <h2>{{o}} {{color}}</h2>
+  </div>
+
+  
+  <h2> {{"Hello " + uname|lowercase}}</h2>
+  <h2> {{"Hello " + uname|uppercase}}</h2>
+  <h2> {{"Hello " + uname|titlecase}}</h2>
+  <h2> {{"Hello " + uname|titlecase}}</h2>
+  <h2> {{person | json}}</h2>
+  <button (click)="fireEvent()">Send Event</button>
+
+  <h2>{{5.678 | number:'1.2-3'}}</h2>
+  <h2>{{5.678 | number:'3.4-5'}}</h2>
+  <h2>{{5.678 | number:'3.1-2'}}</h2>
+  <h2>{{0.25 | percent}}</h2>
+  <h2>{{0.25 | currency : 'INR'}}</h2>
+  <h2>{{date | date:'short'}}</h2>
+  <h2>{{date | date:'shortDate'}}</h2>
+  <h2>{{date | date:'shortTime'}}</h2>
